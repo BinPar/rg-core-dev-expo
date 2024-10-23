@@ -1,0 +1,112 @@
+/* assets/css/reset.css */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a,
+button {
+  cursor: revert;
+}
+ol,
+ul,
+menu {
+  list-style: none;
+}
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+table {
+  border-collapse: collapse;
+}
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+textarea {
+  white-space: revert;
+}
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+:where(pre) {
+  all: revert;
+}
+::placeholder {
+  color: unset;
+}
+::marker {
+  content: initial;
+}
+:where([hidden]) {
+  display: none;
+}
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+:where(dialog:modal) {
+  all: revert;
+}
+
+/* assets/css/vars.css */
+:root {
+  --column-count: 2;
+  --column-gap: 216px;
+  --column-width: 740px: ;
+}
+
+/* assets/css/rg-core.css */
+html {
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  overflow: hidden;
+}
+#reader {
+  height: 100%;
+  background-color: gray;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 10px;
+  user-select: none;
+}
+#reader.flow {
+  column-count: var(--column-count);
+  scroll-snap-type: x mandatory;
+}
+#reader > * {
+  scroll-snap-align: start;
+}
+.rg-buttons-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #0000043f;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+.rg-button {
+  width: 2rem;
+  height: 2rem;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
